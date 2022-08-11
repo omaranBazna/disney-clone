@@ -9,13 +9,24 @@ import {
   selectUserPhoto,
   setUserLoginDetails,
 } from "../features/userSlice";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { onAuthStateChanged } from "firebase/auth";
 const Header = () => {
   const dispatch = useDispatch();
-
+  const navigate = useNavigate();
   const userName = useSelector(selectUserName);
   const userEmail = useSelector(selectUserEmail);
   const userPhoto = useSelector(selectUserPhoto);
 
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUser(user);
+        navigate.push("./home");
+      }
+    });
+  }, [userName]);
   const handleAuth = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
