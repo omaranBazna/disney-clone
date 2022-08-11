@@ -11,6 +11,8 @@ import {
 } from "../features/userSlice";
 const Header = () => {
   const dispatch = useDispatch();
+
+  const history = useHistory();
   const userName = useSelector(selectUserName);
   const userEmail = useSelector(selectUserEmail);
   const userPhoto = useSelector(selectUserPhoto);
