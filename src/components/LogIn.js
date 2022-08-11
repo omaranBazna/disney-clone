@@ -7,6 +7,10 @@ const LogIn = () => {
         <CTA>
           <CTALogoOne src="/images/cta-logo-one.svg" />
           <SignUp>GET ALL THERE</SignUp>
+          <Description>
+            GET PREMIUM ACCESS TO ALL YOUR FAVORITE MOVIES AND START HAVING FUN
+            WITH FRIENDS
+          </Description>
         </CTA>
 
         <BgImage />
@@ -80,5 +84,12 @@ const SignUp = styled.a`
     background: #0483ee;
   }
   cursor: pointer;
+`;
+const Description = styled.p`
+  color: hsla(0, 0%, 95.3%, 1);
+  font-size: 11px;
+  margin: 0 0 24px;
+  lin-height: 1.5em;
+  letter-spacing: 1.5px;
 `;
 export default LogIn;
