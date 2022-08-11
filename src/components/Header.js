@@ -33,6 +33,7 @@ const Header = () => {
             <img src="/images/series-icon.svg" alt="series" />
             <span>SERIES</span>
           </a>
+          <Login>Login</Login>
         </NavMenu>
       </Nav>
     </div>
@@ -114,6 +115,22 @@ const NavMenu = styled.div`
         opacity: 1;
       }
     }
+  }
+`;
+const Login = styled.a`
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 8px 16px;
+  height: 40px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border: 1px solid #f9f9f9;
+  border-radius: 4px;
+  transition: all 0.4s ease 0s;
+  margin-right: auto;
+  &:hover {
+    background-color: #f9f9f9;
+    color: #000;
+    border-color: transparent;
   }
 `;
 export default Header;
