@@ -84,7 +84,12 @@ const Header = () => {
                 <span>SERIES</span>
               </a>
             </NavMenu>
-            <UserImg src={userPhoto} alt={userName} />
+            <SignOut>
+              <UserImg src={userPhoto} alt={userName} />
+              <DropDown>
+                <span onClick={handleAuth}>sign out</span>
+              </DropDown>
+            </SignOut>
           </>
         )}
       </Nav>
@@ -187,5 +192,31 @@ const Login = styled.a`
 `;
 const UserImg = styled.img`
   height: 100%;
+`;
+const SignOut = styled.div`
+  position: relative;
+  height: 48px;
+  width: 48px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  ${UserImg} {
+    border-radius: 50%;
+  }
+`;
+const DropDown = styled.div`
+  position: absolute;
+  top: 45px;
+  right: 0px;
+  background-color: rgb(19, 19, 19);
+  border: 1px solid rgba(151, 151, 151, 0.34);
+  border-radius: 4px;
+  box-shadow: rgb(0 0 0 / 50%) 0px 9px 18px 0px;
+  padding: 10px;
+  font-size: 14px;
+  letter-spacing: 3px;
+  width: 100px;
+  opacity: 0;
 `;
 export default Header;
