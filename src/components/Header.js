@@ -2,7 +2,19 @@ import React from "react";
 import styled from "styled-components";
 import { provider, auth } from "../firebase";
 import { signInWithPopup } from "firebase/auth";
+import { useDispatch, useSelector } from "react-redux/es/exports";
+import { useHistory } from "react-router-dom";
+import {
+  selectUserEmail,
+  selectUserName,
+  selectUserPhoto,
+} from "../features/userSlice";
 const Header = () => {
+  const dispatch = useDispatch();
+  const userName = useSelector(selectUserName);
+  const userEmail = useSelector(selectUserEmail);
+  const userPhoto = useSelector(selectUserPhoto);
+
   const handleAuth = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
