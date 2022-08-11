@@ -43,7 +43,7 @@ const Header = () => {
             <img src="/images/series-icon.svg" alt="series" />
             <span>SERIES</span>
           </a>
-          <Login>Login</Login>
+          <Login onClick={handleAuth}>Login</Login>
         </NavMenu>
       </Nav>
     </div>
