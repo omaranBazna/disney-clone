@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { provider, auth } from "../firebase";
 import { signInWithPopup } from "firebase/auth";
 import { useDispatch, useSelector } from "react-redux/es/exports";
-import { useHistory } from "react-router-dom";
 import {
   selectUserEmail,
   selectUserName,
@@ -13,7 +12,6 @@ import {
 const Header = () => {
   const dispatch = useDispatch();
 
-  const history = useHistory();
   const userName = useSelector(selectUserName);
   const userEmail = useSelector(selectUserEmail);
   const userPhoto = useSelector(selectUserPhoto);
@@ -42,34 +40,41 @@ const Header = () => {
       <Nav>
         <Logo>
           <img src="/images/logo.svg" alt="Disney logo" />
-        </Logo>{" "}
-        <NavMenu>
-          <a href="/home">
-            <img src="/images/home-icon.svg" alt="Home" />
-            <span>HOME</span>
-          </a>
-          <a href="/search">
-            <img src="/images/search-icon.svg" alt="search" />
-            <span>SEARCH</span>
-          </a>
-          <a href="/watchlist">
-            <img src="/images/watchlist-icon.svg" alt="watch list" />
-            <span>WATCHLIST</span>
-          </a>
-          <a href="/originals">
-            <img src="/images/original-icon.svg" alt="originals" />
-            <span>ORIGINALS</span>
-          </a>
-          <a href="/movies">
-            <img src="/images/movie-icon.svg" alt="movies" />
-            <span>MOVIES</span>
-          </a>
-          <a href="/series">
-            <img src="/images/series-icon.svg" alt="series" />
-            <span>SERIES</span>
-          </a>
+        </Logo>
+
+        {userName == "" ? (
           <Login onClick={handleAuth}>Login</Login>
-        </NavMenu>
+        ) : (
+          <>
+            {" "}
+            <NavMenu>
+              <a href="/home">
+                <img src="/images/home-icon.svg" alt="Home" />
+                <span>HOME</span>
+              </a>
+              <a href="/search">
+                <img src="/images/search-icon.svg" alt="search" />
+                <span>SEARCH</span>
+              </a>
+              <a href="/watchlist">
+                <img src="/images/watchlist-icon.svg" alt="watch list" />
+                <span>WATCHLIST</span>
+              </a>
+              <a href="/originals">
+                <img src="/images/original-icon.svg" alt="originals" />
+                <span>ORIGINALS</span>
+              </a>
+              <a href="/movies">
+                <img src="/images/movie-icon.svg" alt="movies" />
+                <span>MOVIES</span>
+              </a>
+              <a href="/series">
+                <img src="/images/series-icon.svg" alt="series" />
+                <span>SERIES</span>
+              </a>
+            </NavMenu>
+          </>
+        )}
       </Nav>
     </div>
   );
@@ -155,13 +160,13 @@ const NavMenu = styled.div`
 const Login = styled.a`
   background-color: rgba(0, 0, 0, 0.6);
   padding: 8px 16px;
-  height: 40px;
+
   text-transform: uppercase;
   letter-spacing: 1.5px;
   border: 1px solid #f9f9f9;
   border-radius: 4px;
   transition: all 0.4s ease 0s;
-  margin-right: auto;
+
   &:hover {
     background-color: #f9f9f9;
     color: #000;
