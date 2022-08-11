@@ -8,6 +8,7 @@ import {
   selectUserEmail,
   selectUserName,
   selectUserPhoto,
+  setUserLoginDetails,
 } from "../features/userSlice";
 const Header = () => {
   const dispatch = useDispatch();
@@ -20,11 +21,21 @@ const Header = () => {
   const handleAuth = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
-        console.log(result);
+        setUser(result.user);
       })
       .catch((err) => {
         alert(err);
       });
+  };
+
+  const setUser = (user) => {
+    dispatch(
+      setUserLoginDetails({
+        name: user.displayName,
+        email: user.email,
+        photo: user.photoURL,
+      })
+    );
   };
   return (
     <div>
