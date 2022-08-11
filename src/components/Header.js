@@ -1,7 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-
+import { provider } from "../firebase";
+import { signInWithPopup } from "firebase/auth";
 const Header = () => {
+  const handleAuth = () => {
+    signInWithPopup(auth, provider);
+  };
   return (
     <div>
       <Nav>
