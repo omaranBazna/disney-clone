@@ -1,9 +1,15 @@
 import React from "react";
 import styled from "styled-components";
+
 const Header = () => {
   return (
     <div>
-      <Nav>Header</Nav>
+      <Nav>
+        <Logo>
+          <img src="/images/logo.svg" alt="Disney logo" />
+        </Logo>{" "}
+        Header
+      </Nav>
     </div>
   );
 };
@@ -21,5 +27,12 @@ const Nav = styled.nav`
   letter-spacing: 16px;
   z-index: 3;
 `;
-
+const Logo = styled.a`
+  width: 80px;
+  padding: 0px;
+  margin-top: 4px;
+  max-height: 70px;
+  font-size: 0;
+  display: block-inline;
+`;
 export default Header;
