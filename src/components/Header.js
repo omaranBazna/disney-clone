@@ -4,7 +4,13 @@ import { provider } from "../firebase";
 import { signInWithPopup } from "firebase/auth";
 const Header = () => {
   const handleAuth = () => {
-    signInWithPopup(auth, provider);
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((err) => {
+        alert(err);
+      });
   };
   return (
     <div>
