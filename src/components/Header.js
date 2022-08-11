@@ -14,6 +14,9 @@ const Nav = styled.nav`
   right: 0;
   height: 70px;
   background-color: #090b13;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export default Header;
