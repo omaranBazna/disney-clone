@@ -11,6 +11,7 @@ const LogIn = () => {
             GET PREMIUM ACCESS TO ALL YOUR FAVORITE MOVIES AND START HAVING FUN
             WITH FRIENDS
           </Description>
+          <CTALogoTwo src="/images/cta-logo-two.png" />
         </CTA>
 
         <BgImage />
@@ -91,5 +92,12 @@ const Description = styled.p`
   margin: 0 0 24px;
   lin-height: 1.5em;
   letter-spacing: 1.5px;
+`;
+const CTALogoTwo = styled.img`
+  max-width: 600px;
+  margin-bottom: 20px;
+  display: inline-block;
+  vertical-align: bottom;
+  width: 100%;
 `;
 export default LogIn;
