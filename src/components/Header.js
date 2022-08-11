@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { provider } from "../firebase";
+import { provider, auth } from "../firebase";
 import { signInWithPopup } from "firebase/auth";
 const Header = () => {
   const handleAuth = () => {
