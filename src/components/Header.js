@@ -8,7 +8,12 @@ const Header = () => {
         <Logo>
           <img src="/images/logo.svg" alt="Disney logo" />
         </Logo>{" "}
-        <NavMenu>menu</NavMenu>
+        <NavMenu>
+          <a href="/home">
+            <img src="/images/home-icon.svg" alt="Home" />
+            <span>Home</span>
+          </a>
+        </NavMenu>
       </Nav>
     </div>
   );
@@ -46,8 +51,25 @@ const NavMenu = styled.div`
   position: relative;
   margin-right: auto;
   margin-left: 25px;
-  @media (max-width: 768px) {
-    display: none;
+  a {
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    img {
+      height: 20px;
+      min-width: 20px;
+      width: 20px;
+      z-index: auto;
+    }
+    span {
+      color: rgb(249, 249, 249);
+      font-size: 13px;
+      letter-spacing: 1.42px;
+      line-height: 1.08;
+      padding: 2px 0px;
+      white-space: nowrap;
+      position: relative;
+    }
   }
 `;
 export default Header;
