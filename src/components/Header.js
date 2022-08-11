@@ -73,6 +73,7 @@ const Header = () => {
                 <span>SERIES</span>
               </a>
             </NavMenu>
+            <UserImg src={userPhoto} alt={userName} />
           </>
         )}
       </Nav>
@@ -172,5 +173,8 @@ const Login = styled.a`
     color: #000;
     border-color: transparent;
   }
+`;
+const UserImg = styled.img`
+  height: 100%;
 `;
 export default Header;
