@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const ImageSlides = () => {
-  let setting = {
+  let settings = {
     dots: true,
     infinite: true,
     speed: 500,
@@ -14,7 +14,31 @@ const ImageSlides = () => {
     slidesToScroll: 1,
     autoplay: true,
   };
-  return <div></div>;
+  return (
+    <Carousel {...settings}>
+      <div>
+        <h1>1</h1>
+      </div>
+      <div>
+        <h1>2</h1>
+      </div>
+      <div>
+        <h1>3</h1>
+      </div>
+    </Carousel>
+  );
 };
+const Carousel = styled(Slider)`
+  margin-top: 20px;
 
+  & > button {
+    opacity: 0;
+    height: 100%;
+    width: 5vw;
+    z-index: 1;
+    &:hover {
+      opacity: 1;
+    }
+  }
+`;
 export default ImageSlides;
