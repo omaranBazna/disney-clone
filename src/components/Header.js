@@ -14,6 +14,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
 import { signOut } from "firebase/auth";
+import { Link } from "react-router-dom";
 const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -25,7 +26,6 @@ const Header = () => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
-        navigate("./home", { replace: true });
       }
     });
   }, [userName]);
@@ -42,7 +42,6 @@ const Header = () => {
       signOut(auth)
         .then(() => {
           dispatch(setSignOutState());
-          navigate("./", { replace: true });
         })
         .catch((e) => {
           console.log(e);
@@ -72,36 +71,38 @@ const Header = () => {
           <>
             {" "}
             <NavMenu>
-              <a href="/home">
+              <Link to="/home">
                 <img src="/images/home-icon.svg" alt="Home" />
                 <span>HOME</span>
-              </a>
-              <a href="/search">
+              </Link>
+              <Link to="/home">
                 <img src="/images/search-icon.svg" alt="search" />
                 <span>SEARCH</span>
-              </a>
-              <a href="/watchlist">
+              </Link>
+              <Link to="/home">
                 <img src="/images/watchlist-icon.svg" alt="watch list" />
                 <span>WATCHLIST</span>
-              </a>
-              <a href="/originals">
+              </Link>
+              <Link to="/home">
                 <img src="/images/original-icon.svg" alt="originals" />
                 <span>ORIGINALS</span>
-              </a>
-              <a href="/movies">
+              </Link>
+              <Link to="/home">
                 <img src="/images/movie-icon.svg" alt="movies" />
                 <span>MOVIES</span>
-              </a>
-              <a href="/series">
+              </Link>
+              <Link to="/home">
                 <img src="/images/series-icon.svg" alt="series" />
                 <span>SERIES</span>
-              </a>
+              </Link>
             </NavMenu>
             <SignOut>
               <UserImg src={userPhoto} alt={userName} />
-              <DropDown>
-                <span onClick={handleAuth}>sign out</span>
-              </DropDown>
+              <Link to="/">
+                <DropDown>
+                  <span onClick={handleAuth}>sign out</span>
+                </DropDown>
+              </Link>
             </SignOut>
           </>
         )}
