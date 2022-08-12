@@ -17,40 +17,68 @@ import { collection, onSnapshot, doc, query, where } from "firebase/firestore";
 const Home = () => {
   const dispatch = useDispatch();
   const userName = useSelector(selectUserName);
-  let recommends = [];
-  let newDisney = [];
-  let originals = [];
-  let trending = [];
 
   useEffect(() => {
+    let recommends = [];
+    let newDisney = [];
+    let originals = [];
+    let trending = [];
     const q1 = query(
       collection(db, "movies"),
       where("type", "==", "recommend")
     );
     const unsubscribe1 = onSnapshot(q1, (querySnapshot) => {
+      recommends = [];
       querySnapshot.forEach((doc) => {
         recommends = [...recommends, { id: doc.id, ...doc.data() }];
       });
+      dispatch(
+        setMovies({
+          recommend: recommends,
+          newDisney: newDisney,
+          original: originals,
+          trending: trending,
+        })
+      );
     });
 
     const q2 = query(collection(db, "movies"), where("type", "==", "new"));
-    const unsubscribe2 = onSnapshot(q1, (querySnapshot) => {
+    const unsubscribe2 = onSnapshot(q2, (querySnapshot) => {
+      newDisney = [];
       querySnapshot.forEach((doc) => {
-        newDisney.push({ id: doc.id, ...doc.data() });
+        newDisney = [...newDisney, { id: doc.id, ...doc.data() }];
+        dispatch(
+          setMovies({
+            recommend: recommends,
+            newDisney: newDisney,
+            original: originals,
+            trending: trending,
+          })
+        );
       });
     });
 
     const q3 = query(collection(db, "movies"), where("type", "==", "trending"));
-    const unsubscribe3 = onSnapshot(q1, (querySnapshot) => {
+    const unsubscribe3 = onSnapshot(q3, (querySnapshot) => {
+      trending = [];
       querySnapshot.forEach((doc) => {
-        trending.push({ id: doc.id, ...doc.data() });
+        trending = [...trending, { id: doc.id, ...doc.data() }];
       });
+      dispatch(
+        setMovies({
+          recommend: recommends,
+          newDisney: newDisney,
+          original: originals,
+          trending: trending,
+        })
+      );
     });
 
     const q4 = query(collection(db, "movies"), where("type", "==", "original"));
-    const unsubscribe4 = onSnapshot(q1, (querySnapshot) => {
+    const unsubscribe4 = onSnapshot(q4, (querySnapshot) => {
+      originals = [];
       querySnapshot.forEach((doc) => {
-        originals.push({ id: doc.id, ...doc.data() });
+        originals = [...originals, { id: doc.id, ...doc.data() }];
         dispatch(
           setMovies({
             recommend: recommends,
