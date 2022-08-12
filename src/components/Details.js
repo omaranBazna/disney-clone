@@ -93,6 +93,14 @@ const Player = styled.button`
     &:hover {
       background: rgb(198, 198, 198);
     }
+    @media (max-width: 768px) {
+      height: 45px;
+      padding: 0px 12px;
+      margin: 0px 10px 0px 0px;
+      img {
+        width: 25px;
+      }
+    }
   }
 `;
 export default Details;
