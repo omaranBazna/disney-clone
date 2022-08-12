@@ -6,7 +6,7 @@ const initialState = {
   original: null,
   trending: null,
 };
-const movieSlice = createSlice({
+const moviesSlice = createSlice({
   name: "movies",
   initialState,
   reducers: {
@@ -24,3 +24,5 @@ export const selectRecommend = (state) => state.movies.recommend;
 export const selectNewDisney = (state) => state.movies.newDisney;
 export const selectTrending = (state) => state.movies.trending;
 export const selectOriginal = (state) => state.movies.original;
+
+export const moviesReducer = moviesSlice.reducer;
