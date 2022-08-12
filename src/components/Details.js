@@ -1,21 +1,18 @@
 import styled from "styled-components";
 
 import React from "react";
-
+import { useSelector } from "react-redux/es/exports";
+import { moviesReducer, selectMovieSelector } from "../features/moviesSlice";
 const Details = () => {
+  const movie = useSelector(selectMovieSelector);
+
   return (
     <Container>
       <Background>
-        <img
-          src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/49B92C046117E89BC9243A68EE277A3B30D551D4599F23C10BF0B8C1E90AEFB6/scale?width=1440&aspectRatio=1.78&format=jpeg"
-          alt=""
-        />
+        <img src={movie.backgroundImg} alt="" />
       </Background>
       <ImageTitle>
-        <img
-          src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/5C647DF3FFBFA343CFEA84AC715148F25F9E86F398B408010CC403E7654FB908/scale?width=1440&aspectRatio=1.78"
-          alt=""
-        />
+        <img src={movie.titleImg} alt="" />
       </ImageTitle>
       <ContentMeta>
         <Controls>
@@ -38,14 +35,9 @@ const Details = () => {
           </GroupWatch>
         </Controls>
         <DetailsFra>
-          <Title>Inside Out</Title>
-          <SubTitle>2015 • 1h 35m • Coming of Age, Family, Animation</SubTitle>
-          <Description>
-            When 11-year-old Riley moves to a new city, her Emotions team up to
-            help her through the transition. Joy, Fear, Anger, Disgust and
-            Sadness work together, but when Joy and Sadness get lost, they must
-            journey through unfamiliar places to get back home.
-          </Description>
+          <Title>{movie.title}</Title>
+          <SubTitle>{movie.subTitle}</SubTitle>
+          <Description>{movie.description}</Description>
         </DetailsFra>
       </ContentMeta>
     </Container>
@@ -77,7 +69,7 @@ const ImageTitle = styled.div`
   display: flex;
   -webkit-box-pack: start;
   justify-content: start;
-  margin: 0px auto;
+  margin: 0px 50px;
   height: 30vw;
   min-height: 170px;
   padding-bottom: 24px;
