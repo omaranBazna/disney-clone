@@ -16,15 +16,27 @@ const ImageSlides = () => {
   };
   return (
     <Carousel {...settings}>
-      <div>
-        <h1>1</h1>
-      </div>
-      <div>
-        <h1>2</h1>
-      </div>
-      <div>
-        <h1>3</h1>
-      </div>
+      <Wrap>
+        <a>
+          <img src="/images/slider-badag.jpg" alt="badag" />
+        </a>
+      </Wrap>
+
+      <Wrap>
+        <a>
+          <img src="/images/slider-badging.jpg" alt="badging" />
+        </a>
+      </Wrap>
+      <Wrap>
+        <a>
+          <img src="/images/slider-scale.jpg" alt="scale" />
+        </a>
+      </Wrap>
+      <Wrap>
+        <a>
+          <img src="/images/slider-scales.jpg" alt="scales" />
+        </a>
+      </Wrap>
     </Carousel>
   );
 };
@@ -44,11 +56,16 @@ const Carousel = styled(Slider)`
   ul li button {
     &:before {
       font-size: 10px;
-      color: rgb(150, 158, 178);
+      color: rgb(150, 158, 171);
     }
   }
   li.slick-active button:before {
     color: white;
   }
+  .slick-list {
+    overflow: initial;
+  }
 `;
+
+const Wrap = styled.div``;
 export default ImageSlides;
