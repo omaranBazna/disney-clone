@@ -37,14 +37,16 @@ const Details = () => {
             </div>
           </GroupWatch>
         </Controls>
-        <Title>Inside Out</Title>
-        <SubTitle>2015 • 1h 35m • Coming of Age, Family, Animation</SubTitle>
-        <Description>
-          When 11-year-old Riley moves to a new city, her Emotions team up to
-          help her through the transition. Joy, Fear, Anger, Disgust and Sadness
-          work together, but when Joy and Sadness get lost, they must journey
-          through unfamiliar places to get back home.
-        </Description>
+        <DetailsFra>
+          <Title>Inside Out</Title>
+          <SubTitle>2015 • 1h 35m • Coming of Age, Family, Animation</SubTitle>
+          <Description>
+            When 11-year-old Riley moves to a new city, her Emotions team up to
+            help her through the transition. Joy, Fear, Anger, Disgust and
+            Sadness work together, but when Joy and Sadness get lost, they must
+            journey through unfamiliar places to get back home.
+          </Description>
+        </DetailsFra>
       </ContentMeta>
     </Container>
   );
@@ -67,11 +69,7 @@ const Background = styled.div`
   top: 0px;
   z-index: -1;
   img {
-    height: 100vh;
     width: 100vw;
-    @media (max-width: 768px) {
-      width: initial;
-    }
   }
 `;
 const ImageTitle = styled.div`
@@ -90,7 +88,7 @@ const ImageTitle = styled.div`
   }
 `;
 const ContentMeta = styled.div`
-  max-width: 874px;
+  min-width: 874px;
 `;
 const Controls = styled.div`
   align-items: center;
@@ -205,5 +203,11 @@ const SubTitle = styled.div`
   @media (max-width: 768px) {
     font-size: 12px;
   }
+`;
+const DetailsFra = styled.div`
+  background: rgb(0, 0, 30, 0.8);
+  padding: 10px 20px;
+  margin-bottom: 40px;
+  width: 100%;
 `;
 export default Details;
