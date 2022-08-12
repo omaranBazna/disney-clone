@@ -25,7 +25,7 @@ const Header = () => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
-        navigate.push("./home");
+        navigate("./home", { replace: true });
       }
     });
   }, [userName]);
@@ -42,7 +42,7 @@ const Header = () => {
       signOut(auth)
         .then(() => {
           dispatch(setSignOutState());
-          navigate.push("/");
+          navigate("./", { replace: true });
         })
         .catch((e) => {
           console.log(e);
