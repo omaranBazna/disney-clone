@@ -6,10 +6,16 @@ const Details = () => {
   return (
     <Container>
       <Background>
-        <img src="" alt="" />
+        <img
+          src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/49B92C046117E89BC9243A68EE277A3B30D551D4599F23C10BF0B8C1E90AEFB6/scale?width=1440&aspectRatio=1.78&format=jpeg"
+          alt=""
+        />
       </Background>
       <ImageTitle>
-        <img src="" alt="" />
+        <img
+          src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/5C647DF3FFBFA343CFEA84AC715148F25F9E86F398B408010CC403E7654FB908/scale?width=1440&aspectRatio=1.78"
+          alt=""
+        />
       </ImageTitle>
       <ContentMeta>
         <Controls>
@@ -23,8 +29,22 @@ const Details = () => {
           </Trailer>
           <AddList>
             <span></span>
+            <span></span>
           </AddList>
+          <GroupWatch>
+            <div>
+              <img src="/images/group-icon.png"></img>
+            </div>
+          </GroupWatch>
         </Controls>
+        <Title>Inside Out</Title>
+        <SubTitle>2015 • 1h 35m • Coming of Age, Family, Animation</SubTitle>
+        <Description>
+          When 11-year-old Riley moves to a new city, her Emotions team up to
+          help her through the transition. Joy, Fear, Anger, Disgust and Sadness
+          work together, but when Joy and Sadness get lost, they must journey
+          through unfamiliar places to get back home.
+        </Description>
       </ContentMeta>
     </Container>
   );
@@ -116,7 +136,7 @@ const Trailer = styled(Player)`
   color: white;
 `;
 const AddList = styled.div`
-  margin-right: 16px;
+  margin-left: 16px;
   height: 44px;
   width: 44px;
   display: flex;
@@ -129,12 +149,37 @@ const AddList = styled.div`
   span {
     background-color: rgb(249, 249, 249);
     display: inline-block;
+    height: 40px;
+    width: 40px;
     &:first-child {
       height: 2px;
-      transform: translate(1px, 8px) rotate(0deg);
+      transform: translate(1px, 0px) rotate(0deg);
       width: 16px;
+    }
+    &:nth-child(2) {
+      height: 16px;
+      transform: translate(-8px) rotate(0deg);
+      width: 2px;
     }
   }
 `;
-
+const GroupWatch = styled.div`
+  margin-left: 16px;
+  height: 44px;
+  width: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  border: 2px solid white;
+  cursor: pointer;
+  span {
+    background-image: url("/images/group-icon.png");
+    display: inline-block;
+  }
+`;
+const Title = styled.div``;
+const Description = styled.div``;
+const SubTitle = styled.div``;
 export default Details;
