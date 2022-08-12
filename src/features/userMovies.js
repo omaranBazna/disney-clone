@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initailState = {
+const initialState = {
   recommend: null,
   newDisney: null,
   original: null,
@@ -18,3 +18,9 @@ const movieSlice = createSlice({
     },
   },
 });
+
+export const { setMovies } = movieSlice.actions;
+export const selectRecommend = (state) => state.movies.recommend;
+export const selectNewDisney = (state) => state.movies.newDisney;
+export const selectTrending = (state) => state.movies.trending;
+export const selectOriginal = (state) => state.movies.original;
