@@ -1,10 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import ImageSlides from "./ImageSlides";
+import Viewer from "./Viewer";
 const Home = () => {
   return (
     <Container>
       <ImageSlides />
+      <Viewer />
       <h2>Home</h2>
       <h2>Home</h2>
       <h2>Home</h2>
