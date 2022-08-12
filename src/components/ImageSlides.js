@@ -41,7 +41,7 @@ const ImageSlides = () => {
   );
 };
 const Carousel = styled(Slider)`
-  margin-top: 20px;
+  margin-top: 10px;
 
   & > button {
     opacity: 0;
@@ -67,5 +67,21 @@ const Carousel = styled(Slider)`
   }
 `;
 
-const Wrap = styled.div``;
+const Wrap = styled.div`
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  a {
+    border-radius: 4px;
+    box-shadow: rgb(0 0 0 / 69%) 0px 26px 30 px -10px,
+      rgb(0 0 0 / 73%) 0px 16px 10px -10px;
+    cursor: pointer;
+    display: block;
+    padding: 4px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+`;
 export default ImageSlides;

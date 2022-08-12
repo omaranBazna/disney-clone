@@ -23,13 +23,15 @@ const Home = () => {
 };
 
 const Container = styled.main`
+  left: 0;
   position: relative;
   background: url("images/home-background.png");
   min-height: calc(100vh-250px);
   overflow-x: hidden;
   display: block;
   top: 72px;
-  padding: 0 calc(3.5v2+5px);
+  padding: 0 calc(3.5vw+5px);
+  width: 100%;
   &:after {
     background: url("images/home-background.png") center center no-repeat fixed;
     content: "";
