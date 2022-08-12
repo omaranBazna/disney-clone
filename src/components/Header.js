@@ -66,7 +66,9 @@ const Header = () => {
         </Logo>
 
         {userName == "" ? (
-          <Login onClick={handleAuth}>Login</Login>
+          <Link to="/home">
+            <Login onClick={handleAuth}>Login</Login>
+          </Link>
         ) : (
           <>
             {" "}
