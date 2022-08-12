@@ -193,18 +193,7 @@ const Login = styled.a`
 const UserImg = styled.img`
   height: 100%;
 `;
-const SignOut = styled.div`
-  position: relative;
-  height: 48px;
-  width: 48px;
-  display: flex;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-  ${UserImg} {
-    border-radius: 50%;
-  }
-`;
+
 const DropDown = styled.div`
   position: absolute;
   top: 45px;
@@ -219,4 +208,22 @@ const DropDown = styled.div`
   width: 100px;
   opacity: 0;
 `;
+const SignOut = styled.div`
+  position: relative;
+  height: 48px;
+  width: 48px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  ${UserImg} {
+    border-radius: 50%;
+  }
+  &:hover {
+    ${DropDown} {
+      opacity: 1;
+    }
+  }
+`;
+
 export default Header;
