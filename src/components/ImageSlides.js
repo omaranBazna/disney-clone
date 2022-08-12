@@ -38,7 +38,17 @@ const Carousel = styled(Slider)`
     z-index: 1;
     &:hover {
       opacity: 1;
+      transition: opacity 0.2s ease 0s;
     }
+  }
+  ul li button {
+    &:before {
+      font-size: 10px;
+      color: rgb(150, 158, 178);
+    }
+  }
+  li.slick-active button:before {
+    color: white;
   }
 `;
 export default ImageSlides;
