@@ -7,19 +7,6 @@ const Home = () => {
     <Container>
       <ImageSlides />
       <Viewer />
-      <h2>Home</h2>
-      <h2>Home</h2>
-      <h2>Home</h2>
-
-      <h2>Home</h2>
-
-      <h2>Home</h2>
-      <h2>Home</h2>
-      <h2>Home</h2>
-      <h2>Home</h2>
-      <h2>Home</h2>
-      <h2>Home</h2>
-      <h2>Home</h2>
     </Container>
   );
 };
