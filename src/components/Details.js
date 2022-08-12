@@ -12,7 +12,12 @@ const Details = () => {
         <img src="" alt="" />
       </ImageTitle>
       <ContentMeta>
-        <Controls>controls</Controls>
+        <Controls>
+          <Player>
+            <img src="/images/play-icon-black.png" alt="play" />
+            <span>Play</span>
+          </Player>
+        </Controls>
       </ContentMeta>
     </Container>
   );
@@ -66,5 +71,28 @@ const Controls = styled.div`
   flex-flow: row nowrap;
   margin: 24px 0px;
   min-height: 56px;
+`;
+const Player = styled.button`
+  font-size: 15px;
+  margin: 0px 22px 0px 0px;
+  padding: 0px 24px;
+  height: 56px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  background: rgb(249, 249, 249);
+  border: none;
+  color: rgb(0, 0, 0);
+  img {
+    width: 32px;
+
+    &:hover {
+      background: rgb(198, 198, 198);
+    }
+  }
 `;
 export default Details;
