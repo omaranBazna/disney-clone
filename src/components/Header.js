@@ -190,7 +190,7 @@ const NavMenu = styled.div`
 const Login = styled.a`
   background-color: rgba(0, 0, 0, 0.6);
   padding: 8px 16px;
-
+  cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   border: 1px solid #f9f9f9;
