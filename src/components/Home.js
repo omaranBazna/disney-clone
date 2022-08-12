@@ -114,7 +114,8 @@ const Container = styled.main`
   padding: 0 40px;
   width: 100%;
   &:after {
-    background: url("images/home-background.png") center center no-repeat fixed;
+    background: url("https://omaranbazna.github.io/disney-clone/images/home-background.png")
+      center center no-repeat fixed;
     content: "";
     position: absolute;
     inset: 0px;

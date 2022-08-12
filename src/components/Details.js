@@ -17,11 +17,17 @@ const Details = () => {
       <ContentMeta>
         <Controls>
           <Player>
-            <img src="/images/play-icon-black.png" alt="play" />
+            <img
+              src="https://omaranbazna.github.io/disney-clone/images/play-icon-black.png"
+              alt="play"
+            />
             <span>Play</span>
           </Player>
           <Trailer>
-            <img src="/images/play-icon-white.png" alt="trailer" />
+            <img
+              src="https://omaranbazna.github.io/disney-clone/images/play-icon-white.png"
+              alt="trailer"
+            />
             <span>Trailer</span>
           </Trailer>
           <AddList>
@@ -30,7 +36,7 @@ const Details = () => {
           </AddList>
           <GroupWatch>
             <div>
-              <img src="/images/group-icon.png"></img>
+              <img src="https://omaranbazna.github.io/disney-clone/images/group-icon.png"></img>
             </div>
           </GroupWatch>
         </Controls>

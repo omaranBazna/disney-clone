@@ -4,33 +4,48 @@ const Viewer = () => {
   return (
     <Container>
       <Wrap>
-        <img src="/images/viewers-disney.png" />
+        <img src="https://omaranbazna.github.io/disney-clone/images/viewers-disney.png" />
         <video autoPlay={true} loop={true} playsInline={true}>
-          <source src="/videos/disney.mp4" type="video/mp4" />
+          <source
+            src="https://omaranbazna.github.io/disney-clone/videos/disney.mp4"
+            type="video/mp4"
+          />
         </video>
       </Wrap>
       <Wrap>
-        <img src="/images/viewers-marvel.png" />
+        <img src="https://omaranbazna.github.io/disney-clone/images/viewers-marvel.png" />
         <video autoPlay={true} loop={true} playsInline={true}>
-          <source src="/videos/marvel.mp4" type="video/mp4" />
+          <source
+            src="https://omaranbazna.github.io/disney-clone/videos/marvel.mp4"
+            type="video/mp4"
+          />
         </video>
       </Wrap>
       <Wrap>
-        <img src="/images/viewers-national.png" />
+        <img src="https://omaranbazna.github.io/disney-clone/images/viewers-national.png" />
         <video autoPlay={true} loop={true} playsInline={true}>
-          <source src="/videos/national-geographic.mp4" type="video/mp4" />
+          <source
+            src="https://omaranbazna.github.io/disney-clone/videos/national-geographic.mp4"
+            type="video/mp4"
+          />
         </video>
       </Wrap>
       <Wrap>
-        <img src="/images/viewers-pixar.png" />
+        <img src="https://omaranbazna.github.io/disney-clone/images/viewers-pixar.png" />
         <video autoPlay={true} loop={true} playsInline={true}>
-          <source src="/videos/pixar.mp4" type="video/mp4" />
+          <source
+            src="https://omaranbazna.github.io/disney-clone/videos/pixar.mp4"
+            type="video/mp4"
+          />
         </video>
       </Wrap>
       <Wrap>
-        <img src="/images/viewers-starwars.png" />
+        <img src="https://omaranbazna.github.io/disney-clone/images/viewers-starwars.png" />
         <video autoPlay={true} loop={true} playsInline={true}>
-          <source src="/videos/star-wars.mp4" type="video/mp4" />
+          <source
+            src="https://omaranbazna.github.io/disney-clone/videos/star-wars.mp4"
+            type="video/mp4"
+          />
         </video>
       </Wrap>
     </Container>

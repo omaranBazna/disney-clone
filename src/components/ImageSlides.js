@@ -18,23 +18,35 @@ const ImageSlides = () => {
     <Carousel {...settings}>
       <Wrap>
         <a>
-          <img src="/images/slider-badag.jpg" alt="badag" />
+          <img
+            src="https://omaranbazna.github.io/disney-clone/images/slider-badag.jpg"
+            alt="badag"
+          />
         </a>
       </Wrap>
 
       <Wrap>
         <a>
-          <img src="/images/slider-badging.jpg" alt="badging" />
+          <img
+            src="https://omaranbazna.github.io/disney-clone/images/slider-badging.jpg"
+            alt="badging"
+          />
         </a>
       </Wrap>
       <Wrap>
         <a>
-          <img src="/images/slider-scale.jpg" alt="scale" />
+          <img
+            src="https://omaranbazna.github.io/disney-clone/images/slider-scale.jpg"
+            alt="scale"
+          />
         </a>
       </Wrap>
       <Wrap>
         <a>
-          <img src="/images/slider-scales.jpg" alt="scales" />
+          <img
+            src="https://omaranbazna.github.io/disney-clone/images/slider-scales.jpg"
+            alt="scales"
+          />
         </a>
       </Wrap>
     </Carousel>

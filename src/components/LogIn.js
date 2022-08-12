@@ -5,13 +5,13 @@ const LogIn = () => {
     <Container>
       <Content>
         <CTA>
-          <CTALogoOne src="/images/cta-logo-one.svg" />
+          <CTALogoOne src="https://omaranbazna.github.io/disney-clone/images/cta-logo-one.svg" />
           <SignUp>GET ALL THERE</SignUp>
           <Description>
             GET PREMIUM ACCESS TO ALL YOUR FAVORITE MOVIES AND START HAVING FUN
             WITH FRIENDS
           </Description>
-          <CTALogoTwo src="/images/cta-logo-two.png" />
+          <CTALogoTwo src="https://omaranbazna.github.io/disney-clone/images/cta-logo-two.png" />
         </CTA>
 
         <BgImage />
@@ -43,7 +43,7 @@ const BgImage = styled.div`
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("/images/login-background.jpg");
+  background-image: url("https://omaranbazna.github.io/disney-clone/images/login-background.jpg");
   position: absolute;
   top: 0;
   left: 0;

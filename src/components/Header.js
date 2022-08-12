@@ -34,6 +34,9 @@ const Header = () => {
       signInWithPopup(auth, provider)
         .then((result) => {
           setUser(result.user);
+          navigate("/home", {
+            replace: true,
+          });
         })
         .catch((err) => {
           alert(err);
@@ -42,6 +45,9 @@ const Header = () => {
       signOut(auth)
         .then(() => {
           dispatch(setSignOutState());
+          navigate("/", {
+            replace: true,
+          });
         })
         .catch((e) => {
           console.log(e);
@@ -62,49 +68,67 @@ const Header = () => {
     <div>
       <Nav>
         <Logo>
-          <img src="/images/logo.svg" alt="Disney logo" />
+          <img
+            src="https://omaranbazna.github.io/disney-clone/images/logo.svg"
+            alt="Disney logo"
+          />
         </Logo>
 
         {userName == "" ? (
-          <Link to="/home">
-            <Login onClick={handleAuth}>Login</Login>
-          </Link>
+          <Login onClick={handleAuth}>Login</Login>
         ) : (
           <>
             {" "}
             <NavMenu>
               <Link to="/home">
-                <img src="/images/home-icon.svg" alt="Home" />
+                <img
+                  src="https://omaranbazna.github.io/disney-clone/images/home-icon.svg"
+                  alt="Home"
+                />
                 <span>HOME</span>
               </Link>
               <Link to="/home">
-                <img src="/images/search-icon.svg" alt="search" />
+                <img
+                  src="https://omaranbazna.github.io/disney-clone/images/search-icon.svg"
+                  alt="search"
+                />
                 <span>SEARCH</span>
               </Link>
               <Link to="/home">
-                <img src="/images/watchlist-icon.svg" alt="watch list" />
+                <img
+                  src="https://omaranbazna.github.io/disney-clone/images/watchlist-icon.svg"
+                  alt="watch list"
+                />
                 <span>WATCHLIST</span>
               </Link>
               <Link to="/home">
-                <img src="/images/original-icon.svg" alt="originals" />
+                <img
+                  src="https://omaranbazna.github.io/disney-clone/images/original-icon.svg"
+                  alt="originals"
+                />
                 <span>ORIGINALS</span>
               </Link>
               <Link to="/home">
-                <img src="/images/movie-icon.svg" alt="movies" />
+                <img
+                  src="https://omaranbazna.github.io/disney-clone/images/movie-icon.svg"
+                  alt="movies"
+                />
                 <span>MOVIES</span>
               </Link>
               <Link to="/home">
-                <img src="/images/series-icon.svg" alt="series" />
+                <img
+                  src="https://omaranbazna.github.io/disney-clone/images/series-icon.svg"
+                  alt="series"
+                />
                 <span>SERIES</span>
               </Link>
             </NavMenu>
             <SignOut>
               <UserImg src={userPhoto} alt={userName} />
-              <Link to="/">
-                <DropDown>
-                  <span onClick={handleAuth}>sign out</span>
-                </DropDown>
-              </Link>
+
+              <DropDown>
+                <span onClick={handleAuth}>sign out</span>
+              </DropDown>
             </SignOut>
           </>
         )}
