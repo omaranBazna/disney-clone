@@ -3,12 +3,14 @@ import styled from "styled-components";
 import ImageSlides from "./ImageSlides";
 import Viewer from "./Viewer";
 import Recommendations from "./Recommendations";
+import NewDisney from "./NewDisney";
 const Home = () => {
   return (
     <Container>
       <ImageSlides />
       <Viewer />
       <Recommendations />
+      <NewDisney />
     </Container>
   );
 };
