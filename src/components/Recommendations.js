@@ -8,6 +8,7 @@ import { selectMovie } from "../features/moviesSlice";
 import { useDispatch } from "react-redux/es/exports";
 const Recommendations = () => {
   const movies = useSelector(selectRecommend);
+  const dispatch = useDispatch();
 
   return (
     <Container>
@@ -16,7 +17,12 @@ const Recommendations = () => {
         {movies &&
           movies.map((movie, index) => {
             return (
-              <Wrap key={index}>
+              <Wrap
+                onClick={() => {
+                  dispatch(selectMovie(movie));
+                }}
+                key={index}
+              >
                 <Link to={"/movies/" + movie.id}>
                   <img src={movie.cardImg} />
                 </Link>

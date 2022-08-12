@@ -8,6 +8,7 @@ import { selectMovie } from "../features/moviesSlice";
 import { useDispatch } from "react-redux/es/exports";
 const Trending = () => {
   const movies = useSelector(selectTrending);
+  const dispatch = useDispatch();
   return (
     <Container>
       <h3>Trending</h3>
@@ -15,7 +16,12 @@ const Trending = () => {
         {movies &&
           movies.map((movie, index) => {
             return (
-              <Wrap key={index}>
+              <Wrap
+                onClick={() => {
+                  dispatch(selectMovie(movie));
+                }}
+                key={index}
+              >
                 <Link to={"/movies/" + movie.id}>
                   <img src={movie.cardImg} />
                 </Link>

@@ -7,6 +7,7 @@ import { selectMovie } from "../features/moviesSlice";
 import { useDispatch } from "react-redux/es/exports";
 const NewDisney = () => {
   const movies = useSelector(selectNewDisney);
+  const dispatch = useDispatch();
   return (
     <Container>
       <h3>New in Disney</h3>
@@ -14,7 +15,12 @@ const NewDisney = () => {
         {movies &&
           movies.map((movie, index) => {
             return (
-              <Wrap key={index}>
+              <Wrap
+                onClick={() => {
+                  dispatch(selectMovie(movie));
+                }}
+                key={index}
+              >
                 <Link to={"/movies/" + movie.id}>
                   <img src={movie.cardImg} />
                 </Link>
