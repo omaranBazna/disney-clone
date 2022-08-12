@@ -4,27 +4,8 @@ import { Link } from "react-router-dom";
 const Recommendations = () => {
   return (
     <Container>
+      <h3>Recommendations</h3>
       <Content>
-        <Wrap>
-          <Link to="/">
-            <img src="https://play-lh.googleusercontent.com/2C54AFFOYYYiTjd6LNQCXEfFCvsOtl0wJCCpFYZutp-XyYlWLSMKpVPQ4HBXDgYyMF0" />
-          </Link>
-        </Wrap>
-        <Wrap>
-          <Link to="/">
-            <img src="https://play-lh.googleusercontent.com/2C54AFFOYYYiTjd6LNQCXEfFCvsOtl0wJCCpFYZutp-XyYlWLSMKpVPQ4HBXDgYyMF0" />
-          </Link>
-        </Wrap>
-        <Wrap>
-          <Link to="/">
-            <img src="https://play-lh.googleusercontent.com/2C54AFFOYYYiTjd6LNQCXEfFCvsOtl0wJCCpFYZutp-XyYlWLSMKpVPQ4HBXDgYyMF0" />
-          </Link>
-        </Wrap>
-        <Wrap>
-          <Link to="/">
-            <img src="https://play-lh.googleusercontent.com/2C54AFFOYYYiTjd6LNQCXEfFCvsOtl0wJCCpFYZutp-XyYlWLSMKpVPQ4HBXDgYyMF0" />
-          </Link>
-        </Wrap>
         <Wrap>
           <Link to="/">
             <img src="https://play-lh.googleusercontent.com/2C54AFFOYYYiTjd6LNQCXEfFCvsOtl0wJCCpFYZutp-XyYlWLSMKpVPQ4HBXDgYyMF0" />

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 const Originals = () => {
   return (
     <Container>
+      <h3>Originals</h3>
       <Content>
         <Wrap>
           <Link to="/">

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 const NewDisney = () => {
   return (
     <Container>
+      <h3>New</h3>
       <Content>
         <Wrap>
           <Link to="/">
