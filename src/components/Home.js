@@ -2,11 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import ImageSlides from "./ImageSlides";
 import Viewer from "./Viewer";
+import Recommendations from "./Recommendations";
 const Home = () => {
   return (
     <Container>
       <ImageSlides />
       <Viewer />
+      <Recommendations />
     </Container>
   );
 };
