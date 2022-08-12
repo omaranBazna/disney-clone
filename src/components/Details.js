@@ -67,8 +67,8 @@ const Background = styled.div`
   top: 0px;
   z-index: -1;
   img {
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
     @media (max-width: 768px) {
       width: initial;
     }
@@ -179,7 +179,31 @@ const GroupWatch = styled.div`
     display: inline-block;
   }
 `;
-const Title = styled.div``;
-const Description = styled.div``;
-const SubTitle = styled.div``;
+const Title = styled.div`
+  color: rgb(249, 249, 249);
+  padding: 16px 20px;
+  font-size: 30px;
+  min-height: 20px;
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
+`;
+const Description = styled.div`
+  line-height: 25px;
+  font-size: 20px;
+  padding: 16px 20px;
+  color: rgb(249, 249, 249);
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+`;
+const SubTitle = styled.div`
+  color: rgb(249, 249, 249);
+  padding: 16px 20px;
+  font-size: 15px;
+  min-height: 20px;
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
+`;
 export default Details;
