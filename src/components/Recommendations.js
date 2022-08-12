@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import { selectRecommend } from "../features/moviesSlice";
-
+import { selectMovie } from "../features/moviesSlice";
+import { useDispatch } from "react-redux/es/exports";
 const Recommendations = () => {
   const movies = useSelector(selectRecommend);
 
