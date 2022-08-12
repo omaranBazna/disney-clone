@@ -43,7 +43,9 @@ const Details = () => {
         <DetailsFra>
           <Title>{movie.title}</Title>
           <SubTitle>{movie.subTitle}</SubTitle>
-          <Description>{movie.description}</Description>
+          <Description>
+            <div>{movie.description}</div>
+          </Description>
         </DetailsFra>
       </ContentMeta>
     </Container>
@@ -68,6 +70,9 @@ const Background = styled.div`
   z-index: -1;
   img {
     width: 100vw;
+  }
+  @media (max-width: 768px) {
+    margin-top: 60px;
   }
 `;
 const ImageTitle = styled.div`
@@ -185,10 +190,11 @@ const Title = styled.div`
   }
 `;
 const Description = styled.div`
-  line-height: 25px;
+  line-height: 30px;
   font-size: 20px;
-  padding: 16px 20px;
+  padding: 16px 30px;
   color: rgb(249, 249, 249);
+  width: 60%;
   @media (max-width: 768px) {
     font-size: 14px;
   }

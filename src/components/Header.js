@@ -26,6 +26,9 @@ const Header = () => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
+        navigate("/home", {
+          replace: true,
+        });
       }
     });
   }, [userName]);
@@ -169,6 +172,7 @@ const NavMenu = styled.div`
   position: relative;
   margin-right: auto;
   margin-left: 25px;
+
   a {
     display: flex;
     align-items: center;
@@ -211,6 +215,10 @@ const NavMenu = styled.div`
         visibility: visible;
         opacity: 1;
       }
+    }
+
+    @media (max-width: 768px) {
+      display: none;
     }
   }
 `;

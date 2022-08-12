@@ -9,6 +9,7 @@ function App() {
     <div>
       <Header />
       <Routes>
+        <Route path="/disney-clone/" element={<LogIn />} />
         <Route path="/" element={<LogIn />} />
         <Route path="/home" element={<Home />} />
         <Route path="/movies/:id" element={<Details />} />
