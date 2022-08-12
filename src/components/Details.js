@@ -21,6 +21,9 @@ const Details = () => {
             <img src="/images/play-icon-white.png" alt="trailer" />
             <span>Trailer</span>
           </Trailer>
+          <AddList>
+            <span></span>
+          </AddList>
         </Controls>
       </ContentMeta>
     </Container>
@@ -111,6 +114,18 @@ const Trailer = styled(Player)`
   background: rgb(0, 0, 0, 0.3);
   border: 1px solid rgb(249, 249, 249);
   color: white;
+`;
+const AddList = styled.div`
+  margin-right: 16px;
+  height: 44px;
+  width: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  border: 2px solid white;
+  cursor: pointer;
 `;
 
 export default Details;
