@@ -1,7 +1,8 @@
 import styled from "styled-components";
+
 import React from "react";
 import { Link } from "react-router-dom";
-const NewDisney = () => {
+const Originals = () => {
   return (
     <Container>
       <Content>
@@ -71,4 +72,4 @@ const Wrap = styled.div`
     top: 0;
   }
 `;
-export default NewDisney;
+export default Originals;
