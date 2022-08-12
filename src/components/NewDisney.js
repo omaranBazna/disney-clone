@@ -1,31 +1,25 @@
 import styled from "styled-components";
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux/es/hooks/useSelector";
+import { selectNewDisney } from "../features/moviesSlice";
+
 const NewDisney = () => {
+  const movies = useSelector(selectNewDisney);
   return (
     <Container>
       <h3>New</h3>
       <Content>
-        <Wrap>
-          <Link to="/">
-            <img src="https://play-lh.googleusercontent.com/2C54AFFOYYYiTjd6LNQCXEfFCvsOtl0wJCCpFYZutp-XyYlWLSMKpVPQ4HBXDgYyMF0" />
-          </Link>
-        </Wrap>
-        <Wrap>
-          <Link to="/">
-            <img src="https://play-lh.googleusercontent.com/2C54AFFOYYYiTjd6LNQCXEfFCvsOtl0wJCCpFYZutp-XyYlWLSMKpVPQ4HBXDgYyMF0" />
-          </Link>
-        </Wrap>
-        <Wrap>
-          <Link to="/">
-            <img src="https://play-lh.googleusercontent.com/2C54AFFOYYYiTjd6LNQCXEfFCvsOtl0wJCCpFYZutp-XyYlWLSMKpVPQ4HBXDgYyMF0" />
-          </Link>
-        </Wrap>
-        <Wrap>
-          <Link to="/">
-            <img src="https://play-lh.googleusercontent.com/2C54AFFOYYYiTjd6LNQCXEfFCvsOtl0wJCCpFYZutp-XyYlWLSMKpVPQ4HBXDgYyMF0" />
-          </Link>
-        </Wrap>
+        {movies &&
+          movies.map((movie, index) => {
+            return (
+              <Wrap key={index}>
+                <Link to={"/movies/" + movie.id}>
+                  <img src={movie.cardImg} />
+                </Link>
+              </Wrap>
+            );
+          })}
       </Content>
     </Container>
   );

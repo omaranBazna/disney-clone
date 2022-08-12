@@ -16,6 +16,7 @@
     "react-scripts": "5.0.1",
     "react-slick": "^0.29.0",
     "react-slides": "^1.0.1",
+    "redux-logger": "^3.0.6",
     "slick-carousel": "^1.8.1",
     "styled-component": "^2.8.0",
     "styled-components": "^5.3.5",

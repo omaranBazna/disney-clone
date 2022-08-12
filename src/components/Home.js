@@ -29,7 +29,7 @@ const Home = () => {
     );
     const unsubscribe1 = onSnapshot(q1, (querySnapshot) => {
       querySnapshot.forEach((doc) => {
-        recommends.push({ id: doc.id, ...doc.data() });
+        recommends = [...recommends, { id: doc.id, ...doc.data() }];
       });
     });
 
@@ -51,9 +51,17 @@ const Home = () => {
     const unsubscribe4 = onSnapshot(q1, (querySnapshot) => {
       querySnapshot.forEach((doc) => {
         originals.push({ id: doc.id, ...doc.data() });
+        dispatch(
+          setMovies({
+            recommend: recommends,
+            newDisney: newDisney,
+            original: originals,
+            trending: trending,
+          })
+        );
       });
     });
-  }, []);
+  }, [userName]);
 
   return (
     <Container>
