@@ -7,11 +7,13 @@ import {
   selectUserEmail,
   selectUserName,
   selectUserPhoto,
+  setSignOutState,
   setUserLoginDetails,
 } from "../features/userSlice";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
+import { signOut } from "firebase/auth";
 const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -28,13 +30,24 @@ const Header = () => {
     });
   }, [userName]);
   const handleAuth = () => {
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        setUser(result.user);
-      })
-      .catch((err) => {
-        alert(err);
-      });
+    if (!userName) {
+      signInWithPopup(auth, provider)
+        .then((result) => {
+          setUser(result.user);
+        })
+        .catch((err) => {
+          alert(err);
+        });
+    } else {
+      signOut(auth)
+        .then(() => {
+          dispatch(setSignOutState());
+          navigate.push("/");
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    }
   };
 
   const setUser = (user) => {
