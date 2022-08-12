@@ -126,6 +126,15 @@ const AddList = styled.div`
   border-radius: 50%;
   border: 2px solid white;
   cursor: pointer;
+  span {
+    background-color: rgb(249, 249, 249);
+    display: inline-block;
+    &:first-child {
+      height: 2px;
+      transform: translate(1px, 8px) rotate(0deg);
+      width: 16px;
+    }
+  }
 `;
 
 export default Details;
