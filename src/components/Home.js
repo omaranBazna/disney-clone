@@ -6,6 +6,13 @@ import Recommendations from "./Recommendations";
 import NewDisney from "./NewDisney";
 import Originals from "./Originals";
 import Trending from "./Trending";
+
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux/es/hooks/useDispatch";
+import { db } from "../firebase";
+import { setMovies } from "../features/moviesSlice";
+import { selectUserName } from "../features/userSlice";
+
 const Home = () => {
   return (
     <Container>
