@@ -12,8 +12,24 @@ import { useDispatch, useSelector } from "react-redux/es/hooks/useDispatch";
 import { db } from "../firebase";
 import { setMovies } from "../features/moviesSlice";
 import { selectUserName } from "../features/userSlice";
-
+import { collection, onSnapshot } from "firebase/firestore";
 const Home = () => {
+  const dispatch = useDispatch();
+  const userName = useSelector(selectUserName);
+  let recommends = [];
+  let newDisney = [];
+  let originals = [];
+  let trending = [];
+  useEffect(() => {
+    db.collection("movies").onSnapshot((snapshot) => {
+      snapshot.docs.map((doc) => {
+        switch (doc.data().type) {
+          case "recommended":
+            recommends.push({ id: doc.id, ...doc.data() });
+        }
+      });
+    });
+  }, []);
   return (
     <Container>
       <ImageSlides />
