@@ -28,13 +28,16 @@ const Container = styled.div`
   display: grid;
   grid-gap: 25px;
   gap: 25px;
-  grid-template-columns:repeat(5, minmax(0,1fr)) @media(max-width:768px) {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  @media (max-width: 768px) {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 `;
 const Wrap = styled.div`
-  padding-top: 56px;
+  padding-top: 56.25%;
   border-radius: 10px;
+  margin: 10%;
+  height: fit-content;
   box-shadow: rgba(0, 0, 0, 0.69) 0px 26px 30px -10px,
     rgba(0, 0, 0, 0.73) 0px 16px 10px -10px;
   cursor: pointer;
@@ -49,6 +52,10 @@ const Wrap = styled.div`
     object-fit: cover;
     opacity: 1;
     position: absolute;
+    transition: opacity 500ms ease-in-out 0s;
+    width: 100%;
+    z-index: 1;
+    top: 0px;
   }
 `;
 export default Viewer;
