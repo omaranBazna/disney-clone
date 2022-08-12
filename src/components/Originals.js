@@ -5,9 +5,11 @@ import { Link } from "react-router-dom";
 
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import { selectOriginal } from "../features/moviesSlice";
-
+import { selectMovie } from "../features/moviesSlice";
+import { useDispatch } from "react-redux/es/exports";
 const Originals = () => {
   const movies = useSelector(selectOriginal);
+  const dispatch = useDispatch();
   return (
     <Container>
       <h3>Originals</h3>
@@ -15,7 +17,12 @@ const Originals = () => {
         {movies &&
           movies.map((movie, index) => {
             return (
-              <Wrap key={index}>
+              <Wrap
+                onClick={() => {
+                  dispatch(selectMovie(movie));
+                }}
+                key={index}
+              >
                 <Link to={"/movies/" + movie.id}>
                   <img src={movie.cardImg} />
                 </Link>
