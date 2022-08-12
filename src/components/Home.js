@@ -5,6 +5,7 @@ import Viewer from "./Viewer";
 import Recommendations from "./Recommendations";
 import NewDisney from "./NewDisney";
 import Originals from "./Originals";
+import Trending from "./Trending";
 const Home = () => {
   return (
     <Container>
@@ -13,6 +14,7 @@ const Home = () => {
       <Recommendations />
       <NewDisney />
       <Originals />
+      <Trending />
     </Container>
   );
 };
