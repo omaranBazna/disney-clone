@@ -197,6 +197,9 @@ const Description = styled.div`
   width: 60%;
   @media (max-width: 768px) {
     font-size: 14px;
+    width: 40%;
+    max-width: 320px;
+    padding: 16px 5px;
   }
 `;
 const SubTitle = styled.div`
