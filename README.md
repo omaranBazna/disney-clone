@@ -1,4 +1,4 @@
-# Diney website clone
+# Disney website clone
 
 #In this project I cloned Disney website using React Js , firebase ,Redux.
 
