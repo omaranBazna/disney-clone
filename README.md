@@ -14,7 +14,7 @@
 
 #I used Redux Js for state management to made my app more reliable and testable.
 
-#The App architecture is totally scalable and testable ,we can easily add new movie with full details.
+#The App architecture is totally scalable and testable ,we can easily add a new movie with full details.
 
 #The code is well documented ,clean ,commented ,divide into separate modules and components and easy to understand.
 
