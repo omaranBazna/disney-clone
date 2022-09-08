@@ -10,6 +10,8 @@
 
 #For the database ,I used firebase collections to store all movies data.
 
+#For user authorization ,I used firebase Google provider .
+
 #I used Redux Js for state management to made my app more reliable and testable.
 
 #The App architecture is totally scalable and testable ,we can easily add new movie with full details.
